@@ -3,6 +3,7 @@ package altlib.collections;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class LinkedListTest {
 
@@ -39,5 +40,12 @@ class LinkedListTest {
         assertThat(s.size()).isEqualTo(4);
         assertThat(s.at(0)).isEqualTo("0");
         assertThat(s.at(3)).isEqualTo("3");
+    }
+
+    @Test
+    void testAtOutOfRange() {
+        List<Integer> l = new LinkedList<Integer>().add(0, 1);
+
+        assertThatThrownBy(() -> l.at(4)).isInstanceOf(IndexOutOfBoundsException.class);
     }
 }

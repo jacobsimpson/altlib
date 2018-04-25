@@ -2,6 +2,8 @@ package altlib.collections;
 
 import java.util.function.Function;
 
+import static java.lang.String.format;
+
 public class LinkedList<T> implements List<T>, ReadableList<T> {
     private Node<T> head;
     private Node<T> tail;
@@ -21,6 +23,9 @@ public class LinkedList<T> implements List<T>, ReadableList<T> {
     }
 
     public T at(int index) {
+        if (index < 0 || index >= size)
+            throw new IndexOutOfBoundsException(format("Requested index %d is outside the range of the list", index));
+
         Node<T> result = head;
         for (int i = 0; i < index; i++) {
             result = result.next;
