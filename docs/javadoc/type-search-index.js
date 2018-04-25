@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"altlib.collections","l":"LinkedList"},{"p":"altlib.collections","l":"List"},{"p":"altlib.collections","l":"ReadableList"}]

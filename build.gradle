@@ -10,3 +10,7 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.9.0'
 }
 
+javadoc {
+  source = sourceSets.main.allJava
+  destinationDir = new File('docs/javadoc')
+}
